@@ -159,3 +159,31 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/laxmikarki/gitRepo.git
  * [new branch]      master -> master
 Laxmis-MacBook-Pro:gitRepo laxmi$ 
+Laxmis-MacBook-Pro:gitRepo laxmi$ cat hello.txt
+Laxmis-MacBook-Pro:gitRepo laxmi$ git pull
+fatal: No remote repository specified.  Please, specify either a URL or a
+remote name from which new revisions should be fetched.
+Laxmis-MacBook-Pro:gitRepo laxmi$ git pull hello.txt
+fatal: Invalid gitfile format: hello.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Laxmis-MacBook-Pro:gitRepo laxmi$ git pull origin1
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/laxmikarki/gitRepo
+   63a1c24..c21fb3d  master     -> origin1/master
+You asked to pull from the remote 'origin1', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+Laxmis-MacBook-Pro:gitRepo laxmi$ git pull origin1 master
+From https://github.com/laxmikarki/gitRepo
+ * branch            master     -> FETCH_HEAD
+Updating 63a1c24..c21fb3d
+Fast-forward
+ hello.txt | 161 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 161 insertions(+)
+Laxmis-MacBook-Pro:gitRepo laxmi$ 
